@@ -24,4 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: cd $GITHUB_WORKSPACE && ./node_modules/webpack/bin/webpack.js --config webpack.config.js --output $GITHUB_WORKSPACE/public
+      run: |
+        cd $GITHUB_WORKSPACE
+        npm install
+        ./node_modules/webpack/bin/webpack.js --config webpack.config.js --output $GITHUB_WORKSPACE/public
