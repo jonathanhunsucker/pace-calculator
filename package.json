@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "develop": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --content-base public/ --watch"
+    "develop": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.js --content-base public/ --watch",
+    "build": "mkdir -p docs && cp -r public/* docs/ && ./node_modules/webpack/bin/webpack.js --config webpack.config.js --mode production --output docs/main.js"
   },
   "dependencies": {
     "@babel/core": "^7.9.6",
