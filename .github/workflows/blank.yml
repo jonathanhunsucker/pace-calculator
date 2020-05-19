@@ -27,4 +27,4 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         npm install
-        ./node_modules/webpack/bin/webpack.js --config webpack.config.js --output $GITHUB_WORKSPACE/public
+        ./node_modules/webpack/bin/webpack.js --config webpack.config.js --output $GITHUB_WORKSPACE/public/main.js
