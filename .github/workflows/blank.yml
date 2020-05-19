@@ -7,8 +7,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,3 +26,11 @@ jobs:
         cd $GITHUB_WORKSPACE
         npm install
         ./node_modules/webpack/bin/webpack.js --config webpack.config.js --output $GITHUB_WORKSPACE/public/main.js
+        
+    - name: action-push
+      uses: ludeeus/action-push@0.0.1
+      env:
+        ACTION_MAIL: "jonathantrevorh+ci@gmail.com"
+        ACTION_NAME: Jonatan Hunsucker (CI)
+        ACTION_BRANCH: "gh-pages"
+        ACTION_MESSAGE: "Build"
